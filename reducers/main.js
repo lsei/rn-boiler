@@ -1,12 +1,19 @@
 import {
-	MY_ACTION
+    MY_ACTION,
+    SET_TARGET_PACE
 } from '../actions/main';
 
 export default function main(state = {
     targetPace: 5
-}, action) {
-    switch (action.type) {
+}, {type, payload}) {
+    switch (type) {
     	default: 
-    		return state;
+            return state;
+        
+        case SET_TARGET_PACE:
+            return {
+                ...state,
+                targetPace: payload,
+            }
     }
 }
