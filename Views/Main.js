@@ -6,12 +6,12 @@ import {
     setTargetPace,
 } from '../actions/main'
 
-export class Intro extends React.Component {
+export class Main extends React.Component {
   render() {
     return (
         <View style={styles.container}>
-            <TouchableOpacity onPress={() => {this.props.navigation.navigate('Main')}}>
-                <Text>RN Boiler – Intro</Text>
+            <TouchableOpacity onPress={() => {this.props.navigation.navigate('Intro')}}>
+                <Text>Main</Text>
             </TouchableOpacity>
             <TouchableOpacity onPress={() => {this.props.setTargetPace(this.props.targetPace + (5/60))}}>
                 <Text>{this.props.targetPace}</Text>
@@ -29,7 +29,7 @@ const mapStateToProps = state => ({
       setTargetPace: (value) => dispatch(setTargetPace(value)),
   });
   
-export default connect(mapStateToProps, mapDispatchToProps)(Intro);
+export default connect(mapStateToProps, mapDispatchToProps)(Main);
 
 
 
